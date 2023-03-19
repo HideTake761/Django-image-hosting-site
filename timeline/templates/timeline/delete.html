@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Deleting photo</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <div>
+        {% if id is not None %}
+        <table>
+        <tr><td><img src="{{image}}" width="250" height="250"></td></tr>
+        <tr><td>{{comment}}</td></tr>
+        </table>
+        <form action="{% url 'delete' id %}" method="post">
+            {% csrf_token %}
+            <p><input type="submit" value="DELETE"></p>
+        </form>
+        {% else %}
+        <p>Photo ID:{{id}} is deleted.</p>
+        {% endif %}
+        <h3>Return to <a href="{% url 'list' %}">Photo list</a>.</h3>
+    </div>
+</body>
+</html>

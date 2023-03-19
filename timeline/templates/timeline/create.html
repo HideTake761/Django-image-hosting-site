@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Uploading photo</title>
+</head>
+<body>
+    <div>
+        {% if id is not None %}
+        <h2>Your photo is uploaded. Thank you!</h2>
+        {% endif %}
+    </div>
+    <div>
+        <h2>Uploading photo</h2>
+        <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ upload_form.as_p }}</p>
+            <p><input type="submit" value="POST"></p>
+        </form>
+        <h3><a href="{% url 'list' %}">Photo list</a></h3>
+    </div>
+</body>
+</html>

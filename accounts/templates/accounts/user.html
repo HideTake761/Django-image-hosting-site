@@ -1,0 +1,16 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to our site!</title>
+</head>
+<body>
+    <h1>{{user.username}}</h1>
+    <p>Account was created：{{user.date_joined}}</p>
+    <br>
+    <p><a href="{% url 'list' %}">Photo list</a></p>
+    <p><a href="{% url 'accounts:logout' %}">Log out</a></p>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>User registration</title>
+</head>
+<body>
+    <h1>User registration</h1>
+    <form action="{% url 'accounts:signup' %}" method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="Sign up"></p>
+    </form>
+    <p><a href="{% url 'accounts:login' %}">Log in</a></p>
+</body>
+</html>
