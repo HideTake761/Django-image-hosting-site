@@ -1,6 +1,6 @@
 Django image hosting site
 
-Environment: Windows11 terminal, Visual Studio Code, Django 4.1.5, Python 3.9.13
+Environment: Windows11 terminal, Visual Studio Code, SQLite Viewer, Django 4.1.5, Python 3.9.13
 
 Language: Python
 
