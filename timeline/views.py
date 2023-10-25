@@ -33,6 +33,7 @@ def create(request):
 def preview(request, data_id=0):
 
     upload_data = get_object_or_404(UploadImage, id=data_id)
+    # get()を実行し、オブジェクトが存在しない場合404を返す
 
     if (request.method == 'POST'):
         delete(data_id)
