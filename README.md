@@ -11,6 +11,12 @@ Functions:
 - Enlarging a photo with clicking it
 - Pagination
 
-You need to install PIL(included in anaconda3).
+You need to install Imaging Library Pillow.
 
 >python -m pip install Pillow
+
+Tests: /timeline/tests.py
+3 tests:
+- testing image & comment posting form
+- login test whether users are redirected to login page if they're not authenticated
+- login test whether login with invalid username & password fails
