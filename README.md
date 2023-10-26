@@ -16,6 +16,7 @@ You need to install Imaging Library Pillow.
 >python -m pip install Pillow
 
 Tests: /timeline/tests.py
+
 3 tests:
 - testing image & comment posting form
 - login test whether users are redirected to login page if they're not authenticated
