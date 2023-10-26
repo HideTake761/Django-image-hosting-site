@@ -37,6 +37,7 @@ class UploadFormTest(TestCase):
     def test_list(self):
         #testing whether users are redirected (to login page) if they're not authenticated
         response = self.client.get(reverse('list'))
+        # client.get()でアクセス。reverse()で'listのurlを生成->getの引数に。
         self.assertEqual(response.status_code, 302) # assertEqual(a, b):a == b
     
     def test_invalid_login(self):
