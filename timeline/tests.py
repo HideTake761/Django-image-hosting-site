@@ -4,6 +4,7 @@ from PIL import Image
 from django.test import TestCase, Client
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
+# SimpleUploadedFile:アップロードしたいリアルなサンプルファイルを含むインスタンスを作ることができるオブジェクト
 
 class UploadFormTest(TestCase):
     def _get_form_class(self):
@@ -11,11 +12,12 @@ class UploadFormTest(TestCase):
         return UploadForm
 
     def create_test_image(self):
-        file_obj = io.BytesIO()
-        im = Image.new('RGB', size=(10, 10))
+        # BytesIO:メモリ上でバイナリデータを扱うための機能
+        file_obj = io.BytesIO() # バイト列のストリーム
+        im = Image.new('RGB', size=(100, 100))
         im.save(file_obj, 'jpeg')
         file_obj.name = 'test.jpg'
-        file_obj.seek(0)
+        file_obj.seek(0) # seek(0)でストリームの先頭に
         return file_obj
 
     def test_create(self):
@@ -27,15 +29,15 @@ class UploadFormTest(TestCase):
             files={'image': SimpleUploadedFile(
                 img.name,
                 img.read(),
-                content_type='image/jpg',
-            )},
+                content_type='image/jpg')
+            },
         )
-        self.assertTrue(form.is_valid())
+        self.assertTrue(form.is_valid()) # assertTrue(x):bool(x) is True
 
     def test_list(self):
         #testing whether users are redirected (to login page) if they're not authenticated
         response = self.client.get(reverse('list'))
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 302) # assertEqual(a, b):a == b
     
     def test_invalid_login(self):
         #testing whether login with invalid username & password fails
