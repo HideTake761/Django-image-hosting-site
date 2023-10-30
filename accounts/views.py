@@ -23,7 +23,8 @@ def signup_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        next = request.POST.get('next')
+        next = request.POST.get('next') # クエリストリングとしてnextを定義
+        # このnextは、元々ユーザーがアクセスしようとしていたページのパス
         form = LoginForm(request, data=request.POST)
 
         if form.is_valid():
@@ -46,6 +47,8 @@ def login_view(request):
     }
 
     return render(request, 'accounts/login.html', param)
+    # render(HttpRequest, 使用するtempletes, )指定したテンプレートを読み込み、
+    # レンダリングして(テンプレートに記述されている変数などを実際に使う値に置き換えて表示を完成させて)返す
 
 def logout_view(request):
     logout(request)

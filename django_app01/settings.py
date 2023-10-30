@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "timeline",
     "accounts",
+    "django_cleanup", # 画像削除のアプリ。viewからだとdbの画像は削除するが、サーバ自体(photo\img)には画像ファイルは残る。
+    # インストールが必要 >pip install django-cleanup
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
