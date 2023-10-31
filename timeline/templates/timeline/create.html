@@ -16,6 +16,8 @@
         <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p>{{ upload_form.as_p }}</p>
+            <!-- insert name of login user as 'user' -->
+            <input type="hidden" name="user" value="{{ user.username }}">
             <p><input type="submit" value="POST"></p>
         </form>
         <h3><a href="{% url 'list' %}">Photo list</a></h3>

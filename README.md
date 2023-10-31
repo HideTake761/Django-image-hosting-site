@@ -7,7 +7,8 @@ Language: Python
 Functions:
 - User registration, Login and Logout
 - Posting a photo and a comment, and deleting them
-- Every user can read(watch) and delete all photos and comments
+- Every user can watch(read) all photos and comments
+- Only a user who posted photos and comments can delete them
 - Enlarging a photo with clicking it
 - Pagination
 

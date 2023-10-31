@@ -62,7 +62,9 @@
         <a href="{{ p.image.url }}" target="_blank"><img src="{{ p.image.url }}" width="250" height="250"></a>
         </td>
         <td>
+        {% if user.username == p.user %}
         <a href="{% url 'delete' p.id %}">Delete</a>
+        {% endif %}
         </td>
         </tr>
         <tr><td>{{ p.comment }}</td></tr>                                   

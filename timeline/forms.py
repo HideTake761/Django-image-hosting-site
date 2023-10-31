@@ -4,4 +4,5 @@ from .models import UploadImage
 class UploadForm(forms.ModelForm):
     class Meta:
         model = UploadImage
-        fields = ['image', 'comment']
+        fields = ['image', 'comment', 'user']
+        widgets = {'user': forms.HiddenInput()}
