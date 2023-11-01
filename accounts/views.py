@@ -37,7 +37,7 @@ def login_view(request):
                 else:
                     return redirect(to=next)
 
-    else:
+    else: # GETメソッド(POSTメソッド以外)でリクエストされた際はTemplateを描画してログインのページの表示を行う
         form = LoginForm()
         next = request.GET.get('next')
     
