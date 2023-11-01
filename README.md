@@ -20,5 +20,5 @@ Tests: /timeline/tests.py
 
 3 tests:
 - testing image & comment posting form
-- login test whether users are redirected to login page if they're not authorized
+- login test whether users are redirected to login page if they're not authenticated
 - login test whether login with invalid username & password fails
